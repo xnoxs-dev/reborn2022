@@ -127,6 +127,6 @@ Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi pada pen
 ## **Lisensi**  
 Proyek ini dilisensikan di bawah **[MIT License](LICENSE)**, yang memungkinkan penggunaan bebas dengan batasan minimal.  
 
----
 
-Dokumentasi ini sekarang mencakup semua aspek dari penggunaan langsung hingga implementasi sebagai API berbasis server lokal.
+
+
