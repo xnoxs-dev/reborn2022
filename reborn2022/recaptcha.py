@@ -8,25 +8,25 @@ import speech_recognition as sr
 from pydub import AudioSegment
 import io
 
-# Konfigurasi browser
-chrome_options = Options()
-chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--disable-dev-shm-usage")
-chrome_options.add_argument("--disable-background-networking")
-chrome_options.add_argument("--disable-features=IsolateOrigins,site-per-process")
-chrome_options.add_argument("--headless")  # Mode headless
 
-service = Service("/usr/bin/chromedriver")  # Sesuaikan path chromedriver dengan sistem Anda
+def solve_recaptcha(url, site_key, headless=True):
+    chrome_options = Options()
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-background-networking")
+    chrome_options.add_argument("--disable-features=IsolateOrigins,site-per-process")
 
-def solve_recaptcha(url, site_key):
+    if headless:
+        chrome_options.add_argument("--headless")
+
+    service = Service("/usr/bin/chromedriver")   
     driver = webdriver.Chrome(service=service, options=chrome_options)
     
     try:
         driver.get(url)
         time.sleep(2)
 
-        # Masuk ke iframe reCAPTCHA
         iframe = driver.find_element(By.XPATH, "//iframe[contains(@src,'recaptcha')]")
         driver.switch_to.frame(iframe)
         
@@ -35,7 +35,6 @@ def solve_recaptcha(url, site_key):
         driver.switch_to.default_content()
         time.sleep(3)
 
-        # Masuk ke iframe audio challenge
         audio_iframe = driver.find_element(By.XPATH, "//iframe[contains(@src,'bframe')]")
         driver.switch_to.frame(audio_iframe)
 
@@ -43,12 +42,10 @@ def solve_recaptcha(url, site_key):
         audio_button.click()
         time.sleep(2)
 
-        # Download audio challenge
         audio_link = driver.find_element(By.CLASS_NAME, "rc-audiochallenge-tdownload-link").get_attribute("href")
         response = requests.get(audio_link)
         audio_content = response.content
 
-        # Konversi audio ke teks
         audio_bytes = io.BytesIO(audio_content)
         audio = AudioSegment.from_mp3(audio_bytes)
         audio = audio.set_frame_rate(16000).set_channels(1)
