@@ -1,7 +1,3 @@
-Berikut adalah dokumentasi yang diperbarui dengan bagian tambahan untuk penggunaan menggunakan `api_solver` sebagai server lokal:  
-
----  
-
 # **Solver reCAPTCHA v2**  
 
 **Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Selenium dan pengenalan suara.** Modul ini dirancang untuk bekerja dengan tantangan audio reCAPTCHA.  
