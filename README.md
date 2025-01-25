@@ -9,18 +9,13 @@ Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Seleni
 
 ## Instalasi
 1. Pastikan Anda memiliki Python 3.8+ terinstal di sistem Anda.
-2. Clone repositori ini:
-   ```bash
-   git clone https://github.com/xnoxs-dev/reborn2022.git
+2. ```python
+   python3 -m venv venv
+   source venv/bin/activate
    ```
-3. Masuk ke direktori repositori:
-   ```bash
-   cd reborn2022
-   ```
-4. Instal dependensi yang diperlukan:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. ```python
+   pip install reborn2022
+   ```    
 
 ## Penggunaan
 1. Pastikan Anda memiliki driver Selenium yang sesuai dengan browser yang Anda gunakan (misalnya, ChromeDriver untuk Google Chrome) dan letakan keduanya di path /usr/bin/
