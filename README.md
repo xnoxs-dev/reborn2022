@@ -8,14 +8,14 @@ Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Seleni
 - Menggunakan Selenium, pydub, dan SpeechRecognition untuk menyelesaikan CAPTCHA.
 
 ## Instalasi
-1. Pastikan Anda memiliki Python 3.7+ terinstal di sistem Anda.
+1. Pastikan Anda memiliki Python 3.8+ terinstal di sistem Anda.
 2. Clone repositori ini:
    ```bash
-   git clone https://github.com/username/repo-name.git
+   git clone https://github.com/xnoxs-dev/reborn2022.git
    ```
 3. Masuk ke direktori repositori:
    ```bash
-   cd repo-name
+   cd reborn2022
    ```
 4. Instal dependensi yang diperlukan:
    ```bash
@@ -23,12 +23,12 @@ Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Seleni
    ```
 
 ## Penggunaan
-1. Pastikan Anda memiliki driver Selenium yang sesuai dengan browser yang Anda gunakan (misalnya, ChromeDriver untuk Google Chrome).
+1. Pastikan Anda memiliki driver Selenium yang sesuai dengan browser yang Anda gunakan (misalnya, ChromeDriver untuk Google Chrome) dan letakan keduanya di path /usr/bin/
 2. Impor modul dan gunakan fungsionalitas berikut dalam kode Python Anda:
    ```python
-   from solver_recaptcha import solve_recaptcha
+   from reborn2022.recaptcha import solve_recaptcha
 
-   solve_recaptcha(url="https://example.com")
+   solve_recaptcha(url, site_key, headless) default headless True
    ```
 3. Fungsi `solve_recaptcha` akan membuka halaman reCAPTCHA v2 dan berinteraksi dengan tantangan audio secara otomatis untuk menyelesaikan CAPTCHA.
 
@@ -36,7 +36,6 @@ Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Seleni
 - Selenium
 - pydub
 - SpeechRecognition
-- webdriver-manager (untuk mengelola driver browser secara otomatis)
 
 ## Masalah yang Diketahui
 - Modul ini hanya mendukung tantangan audio reCAPTCHA v2, bukan tantangan gambar.
