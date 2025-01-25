@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 required_packages = [pkg.strip() for pkg in required_packages]
 setup(
     name='reborn2022',
-    version='1.0',
+    version='1.1',
     packages=find_packages(),
     install_requires=required_packages,
     author='PetapaGenit',
