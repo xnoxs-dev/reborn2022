@@ -23,7 +23,7 @@ Modul Python untuk menyelesaikan reCAPTCHA v2 secara otomatis menggunakan Seleni
    ```python
    from reborn2022.recaptcha import solve_recaptcha
 
-   solve_recaptcha(url, site_key, headless) default headless True
+   print(solve_recaptcha(url, site_key, headless)) #default headless True
    ```
 3. Fungsi `solve_recaptcha` akan membuka halaman reCAPTCHA v2 dan berinteraksi dengan tantangan audio secara otomatis untuk menyelesaikan CAPTCHA.
 
