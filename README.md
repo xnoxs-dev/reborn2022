@@ -36,8 +36,7 @@
    from reborn2022.recaptcha import solve_recaptcha
 
    url = "https://www.google.com/recaptcha/api2/demo"
-   site_key = "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-"
-   token = solve_recaptcha(url, site_key, headless=True)  # headless default True
+   token = solve_recaptcha(url, headless=True)  # headless default True
 
    print(token)
    ```
@@ -82,8 +81,7 @@ from reborn2022.test_solver import test_solver
 
 async def main():
     token = await test_solver(
-        "https://www.google.com/recaptcha/api2/demo",
-        "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-"
+        "https://www.google.com/recaptcha/api2/demo"
     )
     print(token)
 
